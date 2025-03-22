@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Love ❤️</title>
+  <style>
+    body {
+      background-color: pink;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      /* Removed overflow: hidden; to allow scrolling */
+    }
+    .message {
+      font-size: 24px;
+      margin-top: 100px;
+      font-weight: bold;
+    }
+    .heart {
+      color: red;
+      font-size: 30px;
+      position: absolute;
+      animation: float 5s linear infinite;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+    .love-letter {
+      display: none;
+      font-size: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px gray;
+      margin-top: 20px;
+    }
+    .button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: darkred;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hey Love! 💖</h1>
+  <p class="message">
+    Even though we're miles apart, my heart is always with you! 💕
+  </p>
+
+  <button class="button" onclick="showLoveLetter()">
+    Click for a surprise! 💌
+  </button>
+
+  <div class="love-letter" id="loveLetter">
+        <h2>My Sweetums,</h2>
+        <p>So here is your first birthday as my boyfriend...As u asked me to put full stopsss so here it is...Ill speak about my feelings now so first time I saw u I don't know y but felt some kind of connection but although being bounded by so many things I still just felt like I needed to speak to this guy I didn't knew anything about u or what kind of boy you were but still decided to go with my feelings and there started the journey of unended conversations..Actually I never thought I could listen to someone this much but I did...I never thought that you'd be wanting to continue speaking with me knowing about my relationship and  thought that one day you would stop texting me but there you were daily messaging me and keeping me updated about your life.. I think it has hardly been a day that went by without us speaking...I always loved to speak with you and listen to all your talks and stories and I will love to listen to them throughout my life...Ok now that's enough to hear  about my love for you and let me wish you.Happy Birthdayy babyyy..I love you and i miss you..I want you to study hard and acheive all your dreams and come back to me as soon as possible..😘💖</p>
+        
+        <p><b>Your Love ❤️</b></p>
+    </div>
+
+
+  <audio id="loveSong" loop>
+    <source src="your-song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    function createHeart() {
+      let heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+    setInterval(createHeart, 300);
+
+    function showLoveLetter() {
+      document.getElementById("loveLetter").style.display = "block";
+      document.getElementById("loveSong").play();
+    }
+  </script>
+</body>
+</html>
